@@ -32,11 +32,13 @@ try:
 
     #Adds shoe to cart
     add_cart = driver.find_element_by_xpath('//button[contains(text(), "{}")]'.format("Add to Bag"))
+    driver.execute_script("arguments[0].scrollIntoView(true);", add_cart)
     add_cart.click()
 
     #Checks out cart
     time.sleep(1)
     checkout = driver.find_element_by_xpath('//button[contains(text(), "{}")]'.format("Checkout"))
+    driver.execute_script("arguments[0].scrollIntoView(true);", checkout)
     checkout.click()
 
     #Enters Details into form
